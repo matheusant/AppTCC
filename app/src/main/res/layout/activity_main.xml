@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E61B1A1A">
+    android:background="@color/colorDark">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,20 +20,12 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_logo" />
+                android:src="@drawable/ic_school" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:text="Seja bem-vindo"
-                android:textColor="#fff"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+
 
         </LinearLayout>
 
@@ -41,54 +33,92 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
             android:layout_marginRight="40dp"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RM:"
+                android:textSize="20sp"
+                android:textColor="@color/colorLetras"
+                android:layout_marginBottom="15dp"/>
+
             <EditText
+                android:id="@+id/edtUsu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text"
                 android:drawableRight="@drawable/ic_login"
-                android:hint="Usuário"
-                android:textColor="#fff"
-                android:inputType="textEmailAddress"
-                android:textColorHint="#fff" />
+                android:hint="Insira seu RM"
+                android:inputType="number"
+                android:textColor="@color/colorLetras"
+                android:textColorHint="@color/colorHint" />
 
-            <EditText
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:text="Senha:"
+                android:textSize="20dp"
+                android:textColor="@color/colorLetras"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"/>
+
+            <EditText
+                android:id="@+id/edtSen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/edit_text"
-                android:drawableRight="@drawable/ic_lock"
-                android:hint="Senha"
+                android:drawableRight="@drawable/ic_visibility"
                 android:inputType="textPassword"
-                android:textColorHint="#fff"
-                android:textColor="#fff"/>
+                android:textColor="@color/colorLetras"/>
+
+            <TextView
+                android:linksClickable="true"
+                android:id="@+id/txtEsqueceu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="Esqueceu sua senha?"
+                android:textColor="@color/colorLetras"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorLetras"
+                android:text="Continuar conectado"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="50dp"
                 android:orientation="vertical">
 
                 <Button
-                    android:layout_width="200dp"
+                    android:layout_width="150dp"
+                    android:id="@+id/btnEntrar"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/desenho"
                     android:text="Entrar"
-                    android:textColor="#fff" />
+                    android:textColor="@color/colorLetras" />
 
-                <TextView
-                    android:layout_width="match_parent"
+                <Button
+                    android:layout_width="150dp"
+                    android:id="@+id/btnPrimeiroA"
+                    android:layout_marginTop="20dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center_horizontal"
-                    android:text="Esqueceu sua senha?"
-                    android:textColor="#fff"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/desenho"
+                    android:text="Primeiro Acesso ?"
+                    android:textColor="@color/colorLetras" />
+
+
 
 
             </LinearLayout>
