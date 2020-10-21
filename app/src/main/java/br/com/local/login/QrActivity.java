@@ -49,7 +49,7 @@ public class QrActivity extends AppCompatActivity {
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
 
         try {
-            BitMatrix bitMatrix = MultiFormatWriter.encode(texto, BarcodeFormat.QR_CODE,250,250);
+            BitMatrix bitMatrix = multiFormatWriter.encode(texto, BarcodeFormat.QR_CODE,250,250);
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
             Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
             ivQR.setImageBitmap(bitmap);
