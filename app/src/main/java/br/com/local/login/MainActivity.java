@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
                 String senha = edtSen.getText().toString();
 
                 if (usuario.equals("12345") && senha.equals("etecia")) {
-                    startActivity(new Intent(getApplicationContext(), QrActivity.class));
+                    Intent intent= new Intent(getApplicationContext(), QrActivity.class);
+                    startActivity(intent);
                     finish();
                 }else if (usuario.equals("") || senha.equals("")) {
                     Toast.makeText(getApplicationContext(),
