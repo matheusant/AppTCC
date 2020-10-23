@@ -52,7 +52,6 @@
                 android:background="@drawable/edit_text"
                 android:drawableRight="@drawable/ic_login"
                 android:hint="Insira seu RM"
-                android:inputType="number"
                 android:textColor="@color/colorLetras"
                 android:textColorHint="@color/colorHint" />
 

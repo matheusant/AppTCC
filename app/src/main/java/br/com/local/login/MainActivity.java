@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 String usuario = edtUsu.getText().toString();
                 String senha = edtSen.getText().toString();
 
-                if (usuario.equals("12345") && senha.equals("etecia")) {
+                if (usuario.equals("etecia") && senha.equals("etecia")) {
                     Intent intent= new Intent(getApplicationContext(), QrActivity.class);
                     startActivity(intent);
                     finish();
