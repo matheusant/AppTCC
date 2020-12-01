@@ -45,10 +45,18 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Criptografia"
+                android:text="RM"
                 android:textColor="@color/colorLetras"
-                android:textSize="10sp"
+                android:textSize="20dp"
                 android:gravity="center_horizontal"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="10dp"
+                android:text="Data: 00/00/0000"
+                android:textSize="20dp"
+                android:textColor="@color/colorLetras">
 
             <Button
                 android:layout_width="150dp"
