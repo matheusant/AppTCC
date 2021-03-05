@@ -37,14 +37,17 @@ public class MainActivity extends AppCompatActivity {
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Transformar variáveis edittext em string
+                //Transformar variáveis editText em string
                 String usuario = edtUsu.getText().toString();
                 String senha = edtSen.getText().toString();
 
-                if (usuario.equals("etecia") && senha.equals("etecia")) {
+                if (senha.equals("etecia")) {
                     Intent intent= new Intent(getApplicationContext(), QrActivity.class);
+                    intent.putExtra("USERLOGIN", usuario);
+                    intent.putExtra("USERPASSWORD", senha);
                     startActivity(intent);
                     finish();
+
                 }else if (usuario.equals("") || senha.equals("")) {
                     Toast.makeText(getApplicationContext(),
                             "Usuário ou senha em branco",

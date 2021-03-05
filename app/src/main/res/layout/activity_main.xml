@@ -23,8 +23,8 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:layout_margin="20dp"
                 android:src="@drawable/ic_school" />
-
 
 
         </LinearLayout>
@@ -37,13 +37,6 @@
             android:layout_marginRight="40dp"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RM:"
-                android:textSize="20sp"
-                android:textColor="@color/colorLetras"
-                android:layout_marginBottom="15dp"/>
 
             <EditText
                 android:id="@+id/edtUsu"
@@ -52,45 +45,40 @@
                 android:background="@drawable/edit_text"
                 android:drawableRight="@drawable/ic_login"
                 android:hint="Insira seu RM"
+                android:inputType="number"
                 android:textColor="@color/colorLetras"
                 android:textColorHint="@color/colorHint" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Senha:"
-                android:textSize="20dp"
-                android:textColor="@color/colorLetras"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="15dp"/>
 
             <EditText
                 android:id="@+id/edtSen"
                 android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text"
+                android:hint="Insira sua senha"
                 android:drawableRight="@drawable/ic_visibility"
                 android:inputType="textPassword"
-                android:textColor="@color/colorLetras"/>
+                android:textColorHint="@color/colorHint"
+                android:textColor="@color/colorLetras" />
 
             <TextView
-                android:linksClickable="true"
                 android:id="@+id/txtEsqueceu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
+                android:linksClickable="true"
                 android:text="Esqueceu sua senha?"
                 android:textColor="@color/colorLetras"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
             <CheckBox
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorLetras"
+                android:layout_marginTop="30dp"
                 android:text="Continuar conectado"
-                />
+                android:textColor="@color/colorLetras" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -99,8 +87,8 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:layout_width="150dp"
                     android:id="@+id/btnEntrar"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/desenho"
@@ -108,16 +96,14 @@
                     android:textColor="@color/colorLetras" />
 
                 <Button
-                    android:layout_width="150dp"
                     android:id="@+id/btnPrimeiroA"
-                    android:layout_marginTop="20dp"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/desenho"
                     android:text="Primeiro Acesso ?"
                     android:textColor="@color/colorLetras" />
-
-
 
 
             </LinearLayout>

@@ -24,15 +24,16 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 public class QrActivity extends AppCompatActivity {
     Button btnSair;
     ImageView ivQR;
-    EditText edtUsu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.qr_layout);
-        edtUsu = findViewById(R.id.edtUsu);
+
+        ivQR = findViewById(R.id.ivQR);
 
         gerarQRcode();
+
 
         btnSair = findViewById(R.id.btnSair);
 
@@ -45,7 +46,9 @@ public class QrActivity extends AppCompatActivity {
     }
 
     private void gerarQRcode() {
-        String texto = edtUsu.getText().toString();
+        //String texto = edtUsu.getText().toString();
+        Intent intent = getIntent();
+        String texto = intent.getStringExtra("USERLOGIN");
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
 
         try {
