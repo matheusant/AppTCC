@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         txtEsqueceu = findViewById(R.id.txtEsqueceu);
         btnEntrar = findViewById(R.id.btnEntrar);
         btnPrimeiroA = findViewById(R.id.btnPrimeiroA);

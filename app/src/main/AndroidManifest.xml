@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/temaSemBarra">
-        <activity android:name=".CadastroActivity"></activity>
-        <activity android:name=".PrimeiroAcessoActivity" />
-        <activity android:name=".RecuperarSucessoActivity" />
-        <activity android:name=".RecuperacaoActivity" />
-        <activity android:name=".QrActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".CadastroActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".PrimeiroAcessoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".RecuperarSucessoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".RecuperacaoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".QrActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

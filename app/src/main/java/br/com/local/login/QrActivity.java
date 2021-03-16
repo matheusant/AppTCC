@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
@@ -24,6 +25,7 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 public class QrActivity extends AppCompatActivity {
     Button btnSair;
     ImageView ivQR;
+    TextView txtRm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,13 @@ public class QrActivity extends AppCompatActivity {
         gerarQRcode();
 
 
+        txtRm = findViewById(R.id.txtRm);
         btnSair = findViewById(R.id.btnSair);
+
+        Intent intent = getIntent();
+        String texto = intent.getStringExtra("USERLOGIN");
+
+        txtRm.setText(texto);
 
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +51,8 @@ public class QrActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+
     }
 
     private void gerarQRcode() {
@@ -60,4 +70,6 @@ public class QrActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+
 }

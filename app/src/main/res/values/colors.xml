@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimaryDark">#111111</color>
+    <color name="colorAccent">#C60303</color>
     <color name="colorDark">#E61B1A1A</color>
     <color name="colorLetras">#ffffff</color>
     <color name="colorHint">#A8FFFFFF</color>
+    <color name="cor_cps">#9C0011</color>
+    <color name="cor_checkbox">#27F402</color>
 </resources>

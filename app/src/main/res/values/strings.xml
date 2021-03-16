@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Login</string>
     <string name="txtConfirmacao">Um email foi enviado para fazer a recuperação de senha do usuário.</string>
-    <string name="txtCadastro">Seu cadastro foi realizado com sucesso. Faça o login com seu RM e a senha cadastrada.</string>
+    <string name="txtCadastro">Seu cadastro foi realizado com sucesso. Faça o login com seu RM e senha cadastrada.</string>
 </resources>

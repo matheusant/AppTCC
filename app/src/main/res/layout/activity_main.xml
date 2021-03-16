@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDark">
+    android:background="@color/colorDark"
+    android:fillViewport="true"
+    android:visibility="visible">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,14 +19,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_weight="1"
                 android:layout_margin="20dp"
-                android:src="@drawable/ic_school" />
+                android:layout_weight="1"
+                android:scaleType="centerInside"
+                android:src="@drawable/cps" />
 
 
         </LinearLayout>
@@ -37,30 +41,47 @@
             android:layout_marginRight="40dp"
             android:orientation="vertical">
 
-
-            <EditText
-                android:id="@+id/edtUsu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edit_text"
-                android:drawableRight="@drawable/ic_login"
-                android:hint="Insira seu RM"
-                android:inputType="number"
-                android:textColor="@color/colorLetras"
-                android:textColorHint="@color/colorHint" />
-
-
-            <EditText
-                android:id="@+id/edtSen"
-                android:layout_width="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edit_text"
-                android:hint="Insira sua senha"
-                android:drawableRight="@drawable/ic_visibility"
-                android:inputType="textPassword"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layUsu"
                 android:textColorHint="@color/colorHint"
-                android:textColor="@color/colorLetras" />
+                app:hintTextColor="@color/colorHint"
+                android:layout_width="match_parent"
+                app:endIconMode="clear_text"
+                android:layout_height="wrap_content"
+                android:hint="RM">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtUsu"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text"
+                    android:textColor="@color/colorLetras" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/laySen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Senha"
+                android:textColorHint="@color/colorHint"
+                app:hintTextColor="@color/colorHint"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/colorAccent"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtSen"
+                    android:background="@drawable/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorLetras" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/txtEsqueceu"
@@ -69,7 +90,6 @@
                 android:gravity="right"
                 android:linksClickable="true"
                 android:text="Esqueceu sua senha?"
-                android:textColor="@color/colorLetras"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -77,6 +97,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
+                android:buttonTint="@color/cor_checkbox"
+                android:checked="true"
                 android:text="Continuar conectado"
                 android:textColor="@color/colorLetras" />
 
@@ -92,8 +114,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/desenho"
-                    android:text="Entrar"
-                    android:textColor="@color/colorLetras" />
+                    android:text="Entrar" />
 
                 <Button
                     android:id="@+id/btnPrimeiroA"
@@ -102,8 +123,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/desenho"
-                    android:text="Primeiro Acesso ?"
-                    android:textColor="@color/colorLetras" />
+                    android:text="Primeiro Acesso ?" />
 
 
             </LinearLayout>

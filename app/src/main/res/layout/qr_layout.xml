@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorDark"
+    android:fillViewport="true"
     android:orientation="vertical"
     tools:context=".QrActivity">
 
@@ -18,53 +19,38 @@
             android:orientation="vertical">
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:gravity="left"
-                android:text="QR-Code:"
-                android:textColor="@color/colorLetras"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
             <ImageView
                 android:id="@+id/ivQR"
-                android:layout_marginTop="50dp"
                 android:layout_width="250dp"
                 android:layout_height="250dp"
-                android:layout_gravity="center_horizontal"/>
-
-            <EditText
-                android:layout_width="250dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp" />
+
+            <TextView
+                android:id="@+id/txtRm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/edit_text"/>
+                android:gravity="center_horizontal"
+                android:text="RM"
+                android:textSize="40sp" />
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RM"
-                android:textColor="@color/colorLetras"
-                android:textSize="20dp"
-                android:gravity="center_horizontal"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="50dp"
                 android:text="Data: 00/00/0000"
-                android:textSize="20dp"
-                android:textColor="@color/colorLetras">
+                android:textSize="20dp" />
 
             <Button
-                android:layout_width="150dp"
                 android:id="@+id/btnSair"
-                android:layout_marginTop="100dp"
-                android:layout_marginRight="10dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/desenho"
                 android:text="Sair"
                 android:textColor="@color/colorLetras" />
