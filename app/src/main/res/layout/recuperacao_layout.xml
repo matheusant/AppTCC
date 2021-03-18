@@ -2,9 +2,10 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorDark"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorDark"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
 
             <TextView
@@ -28,28 +30,28 @@
                 android:textSize="35sp" />
 
 
-            <TextView
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:text="Email:"
-                android:textColor="@color/colorLetras"
-                android:textSize="20sp" />
+                android:layout_marginTop="100dp"
+                android:hint="Insira seu email"
+                android:textColorHint="@color/colorHint"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/colorAccent"
+                app:hintTextColor="@color/colorHint">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/edit_text"
-                android:hint="Insira o seu email"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/colorLetras"
-                android:textColorHint="@color/colorHint" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/colorLetras" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="170dp"
+                android:layout_marginTop="100dp"
                 android:background="@drawable/edit_text"
                 android:gravity="center_horizontal"
                 android:text="Captcha"
