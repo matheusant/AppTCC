@@ -22,10 +22,17 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class QrActivity extends AppCompatActivity {
     Button btnSair;
     ImageView ivQR;
-    TextView txtRm;
+    TextView txtRm, textData;
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    Date data = new Date();
+    String dataFormatada = dateFormat.format( data );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,9 @@ public class QrActivity extends AppCompatActivity {
         setContentView(R.layout.qr_layout);
 
         ivQR = findViewById(R.id.ivQR);
+        textData = findViewById(R.id.textData);
+
+        textData.setText( "Data: " + dataFormatada );
 
         gerarQRcode();
 
@@ -62,7 +72,7 @@ public class QrActivity extends AppCompatActivity {
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
 
         try {
-            BitMatrix bitMatrix = multiFormatWriter.encode(texto, BarcodeFormat.QR_CODE,250,250);
+            BitMatrix bitMatrix = multiFormatWriter.encode(texto + " " + dataFormatada, BarcodeFormat.QR_CODE,250,250);
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
             Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
             ivQR.setImageBitmap(bitmap);

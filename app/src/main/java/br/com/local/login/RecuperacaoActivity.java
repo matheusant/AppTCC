@@ -62,10 +62,6 @@ public class RecuperacaoActivity extends AppCompatActivity implements GoogleApiC
                     }
 
                 }else{
-                    /*Toast.makeText(getApplicationContext(),
-                            "Captcha Inválida",
-                            Toast.LENGTH_SHORT)
-                            .show();*/
                     Snackbar.make(
                             view,
                             "Captcha Inválida",

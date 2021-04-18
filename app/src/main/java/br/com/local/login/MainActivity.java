@@ -1,5 +1,7 @@
 package br.com.local.login;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,10 +13,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.safetynet.SafetyNet;
+import com.google.android.gms.safetynet.SafetyNetApi;
+
+public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks {
     Button btnEntrar, btnPrimeiroA;
     EditText edtUsu, edtSen;
     TextView txtEsqueceu;
+    GoogleApiClient googleApiClient;
+
+    String siteKey = "6LewXq4aAAAAAIa1MvVNm3nLu48omE_RDAPQrAsh";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,28 +49,37 @@ public class MainActivity extends AppCompatActivity {
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Transformar variáveis editText em string
-                String usuario = edtUsu.getText().toString();
-                String senha = edtSen.getText().toString();
 
-                if (senha.equals("etecia")) {
-                    Intent intent= new Intent(getApplicationContext(), QrActivity.class);
-                    intent.putExtra("USERLOGIN", usuario);
-                    intent.putExtra("USERPASSWORD", senha);
-                    startActivity(intent);
-                    finish();
+                SafetyNet.SafetyNetApi.verifyWithRecaptcha(googleApiClient, siteKey)
+                        .setResultCallback(new ResultCallback<SafetyNetApi.RecaptchaTokenResult>() {
+                            @Override
+                            public void onResult(@NonNull SafetyNetApi.RecaptchaTokenResult recaptchaTokenResult) {
+                                Status status = recaptchaTokenResult.getStatus();
 
-                }else if (usuario.equals("") || senha.equals("")) {
-                    Toast.makeText(getApplicationContext(),
-                            "Usuário ou senha em branco",
-                            Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(getApplicationContext(),
-                            "Usuário ou senha incorreto!!",
-                            Toast.LENGTH_SHORT).show();
-                }
+                                //Transformar variáveis editText em string
+                                String usuario = edtUsu.getText().toString();
+                                String senha = edtSen.getText().toString();
 
-                limpar();
+                                if (senha.equals("etecia") && status.isSuccess()) {
+                                    Intent intent = new Intent(getApplicationContext(), QrActivity.class);
+                                    intent.putExtra("USERLOGIN", usuario);
+                                    intent.putExtra("USERPASSWORD", senha);
+
+                                    startActivity(intent);
+                                    finish();
+
+                                } else if (usuario.equals("") || senha.equals("")) {
+                                    Toast.makeText(getApplicationContext(),
+                                            "Usuário ou senha em branco",
+                                            Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(getApplicationContext(),
+                                            "Usuário ou senha incorreto",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
 
             }
 
@@ -73,14 +93,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        googleApiClient = new GoogleApiClient.Builder(this)
+                .addApi(SafetyNet.API)
+                .addConnectionCallbacks(MainActivity.this)
+                .build();
+        googleApiClient.connect();
+
     }
 
-    public void limpar(){
 
-        edtUsu.setText("");
-        edtSen.setText("");
-        edtUsu.requestFocus();
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+
     }
 
+    @Override
+    public void onConnectionSuspended(int i) {
 
+    }
 }

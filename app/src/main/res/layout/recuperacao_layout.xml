@@ -57,12 +57,14 @@
 
                 <CheckBox
                     android:id="@+id/checkBoxRecuperar"
+                    style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="60dp"
                     android:buttonTint="@color/cor_checkbox"
                     android:checked="false"
                     android:text="Não sou um robô"
+                    android:textAllCaps="false"
                     android:textColor="@color/colorLetras" />
 
                 <Button
