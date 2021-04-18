@@ -48,6 +48,7 @@ public class QrActivity extends AppCompatActivity {
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
         });
@@ -56,7 +57,6 @@ public class QrActivity extends AppCompatActivity {
     }
 
     private void gerarQRcode() {
-        //String texto = edtUsu.getText().toString();
         Intent intent = getIntent();
         String texto = intent.getStringExtra("USERLOGIN");
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();

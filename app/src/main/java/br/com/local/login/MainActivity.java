@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                 }
 
+                limpar();
+
             }
 
         });
@@ -71,6 +73,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void limpar(){
+
+        edtUsu.setText("");
+        edtSen.setText("");
+        edtUsu.requestFocus();
     }
 
 

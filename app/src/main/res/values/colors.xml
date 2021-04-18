@@ -8,4 +8,5 @@
     <color name="colorHint">#A8FFFFFF</color>
     <color name="cor_cps">#9C0011</color>
     <color name="cor_checkbox">#27F402</color>
+    <color name="cor_splash">#1E1E1E</color>
 </resources>

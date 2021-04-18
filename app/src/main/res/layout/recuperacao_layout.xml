@@ -41,6 +41,7 @@
                 app:hintTextColor="@color/colorHint">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
@@ -48,27 +49,28 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:background="@drawable/edit_text"
-                android:gravity="center_horizontal"
-                android:text="Captcha"
-                android:textColor="@color/colorLetras" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="50dp"
                 android:orientation="vertical">
 
+                <CheckBox
+                    android:id="@+id/checkBoxRecuperar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="60dp"
+                    android:buttonTint="@color/cor_checkbox"
+                    android:checked="false"
+                    android:text="Não sou um robô"
+                    android:textColor="@color/colorLetras" />
+
                 <Button
                     android:id="@+id/btnEnviar"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/desenho"
+                    android:background="@drawable/button_desenho"
                     android:text="Enviar"
                     android:textColor="@color/colorLetras" />
 
@@ -78,7 +80,7 @@
                     android:layout_height="50dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/desenho"
+                    android:background="@drawable/button_desenho"
                     android:text="Voltar ao login"
                     android:textColor="@color/colorLetras" />
 
