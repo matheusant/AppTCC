@@ -57,25 +57,24 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                                 Status status = recaptchaTokenResult.getStatus();
 
                                 //Transformar variáveis editText em string
-                                String usuario = edtUsu.getText().toString();
-                                String senha = edtSen.getText().toString();
+                                String usuario = edtUsu.getText().toString().trim();
+                                String senha = edtSen.getText().toString().trim();
 
-                                if (senha.equals("etecia") && status.isSuccess()) {
+                                if (!usuario.equals("") && senha.equals("etecia") && status.isSuccess()) {
                                     Intent intent = new Intent(getApplicationContext(), QrActivity.class);
                                     intent.putExtra("USERLOGIN", usuario);
-                                    intent.putExtra("USERPASSWORD", senha);
 
                                     startActivity(intent);
                                     finish();
 
                                 } else if (usuario.equals("") || senha.equals("")) {
                                     Toast.makeText(getApplicationContext(),
-                                            "Usuário ou senha em branco",
-                                            Toast.LENGTH_SHORT).show();
+                                            "RM ou Senha em Branco",
+                                            Toast.LENGTH_LONG).show();
                                 } else {
                                     Toast.makeText(getApplicationContext(),
-                                            "Usuário ou senha incorreto",
-                                            Toast.LENGTH_SHORT).show();
+                                            "RM ou Senha Incorreto",
+                                            Toast.LENGTH_LONG).show();
                                 }
                             }
                         });

@@ -39,6 +39,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
+                    android:id="@+id/edtRmAcesso"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:textColor="@color/colorLetras" />
@@ -58,6 +59,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/edtEmailAcesso"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/colorLetras" />
 
@@ -77,6 +79,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/edtConfirmarEmailAcesso"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/colorLetras" />
 
@@ -94,6 +97,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
+                    android:id="@+id/edtSenhaAcesso"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
                     android:textColor="@color/colorLetras" />
@@ -112,6 +116,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
+                    android:id="@+id/edtConfirmarSenhaAcesso"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
                     android:textColor="@color/colorLetras" />
