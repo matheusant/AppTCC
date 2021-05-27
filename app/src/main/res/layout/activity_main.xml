@@ -115,6 +115,7 @@
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:onClick="logar"
                     android:background="@drawable/button_desenho"
                     android:text="Entrar" />
 

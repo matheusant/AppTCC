@@ -136,6 +136,7 @@
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/button_desenho"
                     android:text="Cadastre-se"
+                    android:onClick="registrar"
                     android:textColor="@color/colorLetras" />
 
                 <Button
